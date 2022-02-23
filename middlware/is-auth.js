@@ -31,7 +31,7 @@ module.exports = async (req, res, next) => {
     req.userId = decodedToken.userId;
     next();
   } catch (error) {
-    err.statusCode = 500;
+    error.statusCode = 500;
     next(error);
     return;
   }
